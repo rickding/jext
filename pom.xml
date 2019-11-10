@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>atlassian-plugin</packaging>
+
+    <parent>
+        <groupId>com.adaptavist.pom</groupId>
+        <artifactId>scriptrunner-jira-standard</artifactId>
+        <version>11</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.jext</groupId>
+    <artifactId>jext</artifactId>
+    <version>1.0.3</version>
+
+    <name>Jext</name>
+    <description>Jext extends Jira with ScriptRunner as development platform</description>
+    <organization>
+        <name>Jext</name>
+        <url>http://jext.top</url>
+    </organization>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jira.version>7.9.0</jira.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-jira-plugin</artifactId>
+                <configuration>
+                    <enableQuickReload>true</enableQuickReload>
+                    <enableFastdev>false</enableFastdev>
+                    <jvmArgs>-Xms512M -Xmx1024M -XX:-UseGCOverheadLimit -server</jvmArgs>
+                    <applications>
+                        <!-- Include Jira Software features -->
+                        <application>
+                            <applicationKey>jira-software</applicationKey>
+                            <version>${jira.software.application.version}</version>
+                        </application>
+                    </applications>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <!-- This is required to find the parent pom and ScriptRunner dependencies -->
+        <repository>
+            <id>adaptavist-external</id>
+            <url>https://nexus.adaptavist.com/content/repositories/external</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+</project>

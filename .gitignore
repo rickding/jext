@@ -1,0 +1,30 @@
+# Compiled class file
+*.class
+.idea/
+target/
+dependency-reduced-pom.xml
+/node/
+node_modules
+.classpath
+.project
+.settings/
+
+# Log file
+*.log
+logs/
+lib
+*.iml
+.gradle
+.bundle
+build
+/docs/build
+/docs/.cache
+/docs/target
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
