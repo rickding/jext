@@ -6,6 +6,8 @@ import com.atlassian.jira.issue.context.GlobalIssueContext
 import com.atlassian.jira.issue.context.JiraContextNode
 import com.atlassian.jira.issue.fields.CustomField
 import com.atlassian.jira.issue.issuetype.IssueType
+import com.jext.constant.FieldSearcherEnum
+import com.jext.constant.FieldTypeEnum
 import com.jext.util.LogUtil
 
 class FieldHelper {
@@ -31,7 +33,7 @@ class FieldHelper {
         return customField
     }
 
-    static CustomField createCustomField(String fieldName, String desc) {
+    static CustomField createCustomField(String fieldName, String desc, FieldTypeEnum type, FieldSearcherEnum searcher) {
         if (!fieldName) {
             return null
         }
@@ -40,6 +42,10 @@ class FieldHelper {
         if (customField) {
             LogUtil.info("create custom field, existed:", fieldName, customField)
             return customField
+        }
+
+        if (!type || !searcher) {
+            return null
         }
 
         /* No issue types to apply */
@@ -52,9 +58,10 @@ class FieldHelper {
 
         CustomFieldManager customFieldMgr = ComponentAccessor.getCustomFieldManager()
         customFieldMgr.createCustomField(
-            fieldName, !desc ? null : desc,
-            customFieldMgr.getCustomFieldType("com.atlassian.jira.plugin.system.customfieldtypes:float"),
-            customFieldMgr.getCustomFieldSearcher("com.atlassian.jira.plugin.system.customfieldtypes:exactnumber"),
+            fieldName,
+            !desc ? null : desc,
+            customFieldMgr.getCustomFieldType(type.getName()),
+            customFieldMgr.getCustomFieldSearcher(searcher.getName()),
             contextTypes,
             issueTypes
         )

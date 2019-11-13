@@ -4,28 +4,16 @@
 * Administer
 * Automate
 
-# Prepare SDKs
-1. Install IntelliJ IDEA 
-2. Install maven
-3. Install JDK8
-    * https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-    * java -version
-4. Install Atlassian SDK
-    * https://developer.atlassian.com/server/framework/atlassian-sdk/install-the-atlassian-sdk-on-a-windows-system/
-    * atlas-version
-5. Install ScriptRunner from Marketplace
-    * http://marketplace.atlassian.com/apps/6820/scriptrunner-for-jira
+# Features
+## DueWorkdays
+* Add script field, use the predefined template.
 
-# Setup Environment
-1. Download source code
-2. Update maven repo: settings.xml
-3. mvn jira:debug
-4. http://localhost:8080/jira, admin/admin
-5. Debug with IDEA
-    * Add configuration: remote, port: 5005
-    * Set log, e.g. D:\work\scriptrunner-samples\jira\target\jira\home\log\atlassian-jira.log
+## Permissions
+* 
 
 # Run code
+* Install ScriptRunner from Marketplace
+    * http://marketplace.atlassian.com/apps/6820/scriptrunner-for-jira
 * Script console
     * Type code directly, e.g. def issue = ComponentAccessor.getIssueManager().getIssueObject("DEMO-1")
     * Call script file, e.g. com/jext/hello/Hello.groovy
@@ -53,3 +41,23 @@
     * field
     * service
     * util
+
+# Customise and extend
+## Prepare SDKs
+1. Install JDK8
+    * https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+    * java -version
+2. Install Atlassian SDK
+    * https://developer.atlassian.com/server/framework/atlassian-sdk/install-the-atlassian-sdk-on-a-windows-system/
+    * atlas-version
+
+## Setup Environment
+1. Install IntelliJ IDEA 
+2. Install maven
+3. Download source code
+4. Update maven repo: settings.xml
+5. mvn jira:debug
+6. http://localhost:8080/jira, admin/admin
+7. Debug with IDEA
+    * Add configuration: remote, port: 5005
+    * Set log, e.g. D:\work\scriptrunner-samples\jira\target\jira\home\log\atlassian-jira.log

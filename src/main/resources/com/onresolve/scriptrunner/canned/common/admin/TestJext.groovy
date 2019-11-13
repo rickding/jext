@@ -9,7 +9,7 @@ import com.onresolve.scriptrunner.canned.util.BuiltinScriptErrors
 class TestJext implements CannedScript {
     @Override
     String getName() {
-        return "Jext Test"
+        return "Test Jext"
     }
 
     @Override
