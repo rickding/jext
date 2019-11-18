@@ -6,5 +6,41 @@
         <param name="plugin-icon">images/pluginIcon.png</param>
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
+
     <resource type="i18n" name="i18n" location="jext"/>
+
+    <!-- Common Section -->
+    <component-import key="scriptRunner">
+        <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+        <interface>com.onresolve.scriptrunner.runner.ScriptRunner</interface>
+    </component-import>
+    <component-import key="jiraSerialisationManager" application="jira">
+        <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+        <interface>com.onresolve.scriptrunner.events.remote.ISerialisationManager</interface>
+    </component-import>
+
+    <component-import key="scheduledScriptManager">
+        <interface>com.onresolve.scriptrunner.scheduled.ScheduledScriptJobManager</interface>
+        <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+    </component-import>
+    <component-import key="eventTrackingManager">
+        <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+    </component-import>
+
+    <!-- JIRA COMPONENTS-->
+    <component-import key="escalationService" application="jira">
+        <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+    </component-import>
+    <component-import key="scriptFieldManager" application="jira">
+        <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+        <interface>com.onresolve.scriptrunner.runner.ScriptFieldManager</interface>
+    </component-import>
+    <component-import key="restEndpointManager">
+        <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+    </component-import>
+
+    <!--Plugin listeners -->
+    <component-import key="jiraDependentPluginListener" application="jira">
+        <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+    </component-import>
 </atlassian-plugin>

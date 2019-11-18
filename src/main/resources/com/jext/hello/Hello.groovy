@@ -12,10 +12,9 @@ LogUtil.info String.format("list: %s, %s", ListUtil.isEmpty(null), ListUtil.isEm
 LogUtil.info String.format("str: %s, %s", StrUtil.isEmpty(null), StrUtil.isEmpty("str"))
 
 // Get issue
-String issueKey = "DEMO-1"
+String issueKey = "DEMO-1222"
 IssueManager issueMgr = ComponentAccessor.getIssueManager()
 Issue issue = issueMgr.getIssueObject(issueKey)
-assert issue
 
 Object[] msg = ["Hello world from Jext!", issueKey, issue?.key, issue?.getSummary()]
 LogUtil.info(msg)

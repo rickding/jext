@@ -14,10 +14,10 @@
 
     <groupId>com.jext</groupId>
     <artifactId>jext</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
 
     <name>Jext</name>
-    <description>Jext extends Jira with ScriptRunner as development platform</description>
+    <description>Jext extends Jira with ScriptRunner as development platform. Field DueWorkdays is provided to calculate the workdays between now and due date.</description>
     <organization>
         <name>Jext</name>
         <url>http://jext.top</url>
@@ -52,6 +52,21 @@
                             <version>${jira.software.application.version}</version>
                         </application>
                     </applications>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- https://blog.csdn.net/weixin_34220179/article/details/86452948 -->
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Import-Package>
+                            org.apache.log4j,
+                            org.osgi.framework.*
+                        </Import-Package>
+                        <Bundle-Activator>com.jext.Activator</Bundle-Activator>
+                    </instructions>
                 </configuration>
             </plugin>
         </plugins>

@@ -4,12 +4,32 @@
 * Administer
 * Automate
 
+# Online course
+https://edu.csdn.net/course/detail/26615
+
 # Features
 ## DueWorkdays
-* Add script field, use the predefined template.
+* Count the workdays between now and due date. 
+* Use the resolved or closed date rather than now if the issue is resolved or closed.
 
 ## Permissions
-* 
+* Project level:
+    * Configure project users roles
+
+* Issue level: Grant the users and groups with different permissions.
+    * IssueEditors
+    * IssueBrowsers
+    * IssueCommenters
+    * GroupEditors
+    * GroupBrowsers
+    * GroupCommenters
+    * Extend: If the users and groups should be configured automatically, some scripts would be added when some events occur.
+
+* Field level:
+    * Configure screen with editable fields
+    * Associate screen with issue type
+    * Change issue type when issue is transited to different status
+    * Extend: If some fields should be in issue detail page while should not be edited, the corresponding scripted fields would be added. 
 
 # Run code
 * Install ScriptRunner from Marketplace
