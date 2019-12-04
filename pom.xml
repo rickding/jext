@@ -14,7 +14,7 @@
 
     <groupId>com.jext</groupId>
     <artifactId>jext</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
 
     <name>Jext</name>
     <description>Jext extends Jira with ScriptRunner as development platform. Field DueWorkdays is provided to calculate the workdays between now and due date.</description>

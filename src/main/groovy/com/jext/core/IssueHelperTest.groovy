@@ -46,4 +46,21 @@ class IssueHelperTest {
             assert it.value == ret
         }
     }
+
+    void testSetIssueType() {
+        LogUtil.info("Test setIssueType()")
+        new HashMap<String, Boolean>() {{
+            put(null, false)
+            put("", false)
+            put("DEMO-4", true)
+            put("DEMO-5", true)
+        }}.each {
+            boolean ret = IssueHelper.setIssueType(it.key, "Backup")
+            LogUtil.info(
+                it.getValue() != ret ? "Error" : "Right",
+                "key", it.getKey(), "value", it.getValue(), "actual", ret
+            )
+            assert it.value == ret
+        }
+    }
 }
