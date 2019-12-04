@@ -9,6 +9,11 @@
 
     <resource type="i18n" name="i18n" location="jext"/>
 
+    <component key="createScriptFieldUpgradeTask" name="Create script field"
+               class="com.jext.upgrade.FieldUpgradeTask" public="true" application="jira">
+        <interface>com.atlassian.sal.api.upgrade.PluginUpgradeTask</interface>
+    </component>
+
     <!-- Common Section -->
     <component-import key="scriptRunner">
         <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>

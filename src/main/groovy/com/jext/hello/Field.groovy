@@ -1,6 +1,7 @@
 package com.jext.hello
 
 import com.atlassian.jira.component.ComponentAccessor
+import com.atlassian.jira.issue.Issue
 import com.atlassian.jira.issue.fields.CustomField
 import com.jext.util.LogUtil
 

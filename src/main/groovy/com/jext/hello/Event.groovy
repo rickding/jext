@@ -7,26 +7,17 @@ import com.atlassian.jira.issue.Issue
 import com.atlassian.jira.issue.fields.CustomField
 import com.jext.util.LogUtil
 
-int eventId = 0
 assert event
-IssueEvent ev = event
-LogUtil.info("event", ev.eventTypeId, ev)
-eventId = (int) event.eventTypeId
-Issue issue = event.issue
+LogUtil.info("event", event.eventTypeId, event)
 
+Issue issue = event.issue
 assert issue
 LogUtil.info("event", issue.getKey(), issue.getIssueType().getName(), issue.getStatus().getName())
 
 /**
  * Events: Custom listener
  * - generic event from workflow
- *
- * Note: select * from jiraeventtype;
- * 1: created, 2: updated, 5: closed, 7: reopened, 13: generic
  */
-if (![0, 13].contains(eventId)) {
-    return
-}
 
 // 事件发生时做一些处理，比如设置或清空某些字段
 ["Story Points", "custom field"].each {

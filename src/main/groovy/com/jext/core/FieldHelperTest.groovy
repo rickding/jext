@@ -58,9 +58,12 @@ class FieldHelperTest {
     void testRemoveCustomField() {
         LogUtil.info("Test removeCustomField()")
         [
-            "Custom fields", "New custom field",
-            "DueWorkdaysField", "SampleField", "ScriptField",
-//            "Transition",
+            "Custom fields", "New custom field", "New custom field number", "New custom field script",
+            "New custom field from upgrade", "New custom field from upgrade file",
+
+//            "DueWorkdaysField", "SampleField", "ScriptField", "TransitionField",
+//            "DueWorkdays", "DueWorkdays_Script_Code", "DueWorkdays_Script_File",
+
 //            "IssueEditors", "IssueBrowsers", "IssueCommenters",
 //            "GroupEditors", "GroupBrowsers", "GroupCommenters"
         ].each {
