@@ -5,7 +5,7 @@
 * Automate
 
 # Online course
-https://edu.csdn.net/course/detail/26615
+https://edu.51cto.com/course/20936.html
 
 # Features
 ## DueWorkdays
